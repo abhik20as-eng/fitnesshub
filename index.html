@@ -1339,7 +1339,7 @@
     document.querySelectorAll('.stat-num').forEach(el => {
       const target = el.textContent;
       const num = parseInt(target.replace(/\D/g, ''));
-      if (!num) return;
+      if (!num || target.includes('/')) return;
       let current = 0;
       const step = Math.ceil(num / 60);
       const timer = setInterval(() => {
